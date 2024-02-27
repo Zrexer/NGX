@@ -8,6 +8,7 @@ import time
 import json
 import platform
 import gdown
+import rich
 
 os.system("")
 commands: dict = {}
@@ -191,7 +192,7 @@ class log(object):
 log.returnBanner()
 
 baseTime = time.time()
-print(log(f"Running at {colors.red}[{colors.white}{time.ctime(baseTime)}{colors.red}]\n").createInfo)
+print(log(f"Running at {colors.red}[{colors.white}{time.ctime(baseTime)}{colors.red}]{colors.white}\n").createInfo)
 
 bfr = BufferConsole()
 
@@ -214,7 +215,7 @@ if "-h" in sys.argv or "--help" in sys.argv:
             "--port <port number>" : "to set a special port, also should be writed in fron of --create"
         }
     }
-    print(json.dumps(helpData, indent=4))
+    rich.print(json.dumps(helpData, indent=4))
 
 if len(pscsi) == 1 and pscsi[0] != "Null" and pscsi == "ngrok":
     print(log("Try To Get NGROK File").createInfo)
