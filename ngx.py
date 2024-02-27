@@ -212,7 +212,7 @@ if "-h" in sys.argv or "--help" in sys.argv:
         "--down <url>" : "Download a File From GOOGLE DRIVE",
         "--create" : {
             "worker stream" : "create a link on 8081 port",
-            "--port <port number>" : "to set a special port, also should be writed in fron of --create"
+            "--port <port number>" : "to set a special port, also should be writed in front of --create"
         }
     }
     rich.print(json.dumps(helpData, indent=4))
