@@ -187,7 +187,7 @@ class log(object):
                 {}| \| |__] {}_/\_ 
               
     {}{}{}{}{}{}{}{}{}{}
-""".format(colors.yellow, colors.red, colors.yellow, colors.red, colors.yellow, colors.red, colors.yellow, bs, "-"*6, colors.cyan, s, "ᴅᴇᴠ#ʜᴏꜱᴛ1ʟᴇᴛ > 4.5.1", bs, colors.yellow, "-"*6, s+colors.white))
+""".format(colors.yellow, colors.red, colors.yellow, colors.red, colors.yellow, colors.red, colors.yellow, bs, "-"*6, colors.cyan, s, "ᴅᴇᴠ#ʜᴏꜱᴛ1ʟᴇᴛ > 4.5.3", bs, colors.yellow, "-"*6, s+colors.white))
 
 log.returnBanner()
 
