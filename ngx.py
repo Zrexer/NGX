@@ -7,6 +7,7 @@ import sys
 import time
 import json
 import platform
+import gdown
 
 os.system("")
 commands: dict = {}
@@ -197,6 +198,7 @@ bfr = BufferConsole()
 pscsi = bfr.addFlag("-csi")
 psset = bfr.addFlag("--set")
 psport = bfr.addFlag("--port")
+psdriveUrl = bfr.addFlag("--down")
 
 if len(sys.argv) <= 1:
     print(log(f"No Arguments Called: Get Infomation with {colors.red}[{colors.white}-h {colors.red}/ {colors.white}--help{colors.red}]{colors.white}").createError)
@@ -206,6 +208,7 @@ if "-h" in sys.argv or "--help" in sys.argv:
         "help" : "Show This Message",
         "-csi ngrok" : "Download Ngrok file with OS Scanner",
         "--set <token>" : "Set the Auth Token of NGROK",
+        "--down <url>" : "Download a File From GOOGLE DRIVE",
         "--create" : {
             "worker stream" : "create a link on 8081 port",
             "--port <port number>" : "to set a special port, also should be writed in fron of --create"
@@ -258,3 +261,16 @@ if "--create" in sys.argv:
     else:
         print(log(f"Try To create a Stable Connection with port {colors.red}'8081'").createInfo)
         link = NGX.createStreamStableConnection()
+
+if len(psdriveUrl) == 1:
+    if not psdriveUrl[0] == "Null":
+        print(log("Please Be Sure About Current Connection").createWran)
+        print(log(f"Try to DOWNLOAD File: {colors.red}'{psdriveUrl[0]}'{colors.white} ...").createInfo)
+        try:
+            gdown.download(psdriveUrl, quiet=False)
+            print(log(f"Downloaded File: {colors.red}'{wget.filename_from_url(psdriveUrl[0])}'").createInfo)
+            print(log(f"Saved in Path: {colors.red}'{os.getcwd()}'").createInfo)
+        except Exception as ERROR_DRIVE_DOWNLOAD:
+            print(log(str(ERROR_DRIVE_DOWNLOAD)).createError)
+            pass
+    else:print(log("Cannot Get the URL For Download").createError)
