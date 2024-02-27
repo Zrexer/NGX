@@ -14,5 +14,6 @@ python ngx.py -h
 
 # NEWS
 added Drive File Downloader => --down
+fix the part of Help Colors
 
 # Enjoy
