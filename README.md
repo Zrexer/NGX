@@ -12,4 +12,7 @@ python createSetup.py
 python ngx.py -h
 ```
 
+# NEWS
+added Drive File Downloader => --down
+
 # Enjoy
